@@ -1,5 +1,11 @@
-import { createApp } from "vue";
+import { Component, ComputedOptions, MethodOptions, createApp } from "vue";
 import App from "./App.vue";
-import store from "./store";
+import components from "@/components/common";
 
-createApp(App).use(store).mount("#app");
+const app = createApp(App);
+
+components.forEach((component: Component) => {
+  app.component(component.name || "", component);
+});
+
+app.mount("#app");
