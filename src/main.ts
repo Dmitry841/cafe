@@ -1,4 +1,4 @@
-import { Component, ComputedOptions, MethodOptions, createApp } from "vue";
+import { Component, createApp } from "vue";
 import App from "./App.vue";
 import components from "@/components/common";
 

@@ -35,7 +35,7 @@
   </div>
 </template>
 <script lang="ts">
-import { PropType, defineComponent } from "vue";
+import { defineComponent } from "vue";
 import AppButton from "@/components/common/AppButton.vue";
 import AppDialog from "@/components/common/AppDialog.vue";
 import CafeInfo from "@/components/CafeInfo.vue";
@@ -92,7 +92,7 @@ export default defineComponent({
     handleOpenDialog(val = true) {
       (this as unknown as IProps).dialogVisible = val;
     },
-    async handleOpenRandomCafe(val = true) {
+    async handleOpenRandomCafe() {
       (this as unknown as IProps).handleOpenDialog();
       const cafesCount = this.cafes.length;
       const minValue = 0;
@@ -102,7 +102,9 @@ export default defineComponent({
       }
       const cafeIndex =
         Math.floor(Math.random() * (cafesCount - 1 - minValue)) + minValue;
-      await this.fetchCafeInfo((this.cafes[cafeIndex] as any).id);
+      await this.fetchCafeInfo(
+        String((this.cafes[cafeIndex] as unknown as ICafeItem).id)
+      );
     },
     async handleOpenCafe(id: string) {
       (this as unknown as IProps).handleOpenDialog();
@@ -138,17 +140,6 @@ export default defineComponent({
       } finally {
         (this as unknown as IProps).isCafesLoading = false;
       }
-    },
-    async handleOpenRandom() {
-      const cafesCount = this.cafes.length;
-      const minValue = 0;
-      if (!cafesCount) {
-        (this as unknown as IProps).emptyList = true;
-        return;
-      }
-      const cafeIndex =
-        Math.floor(Math.random() * (cafesCount - 1 - minValue)) + minValue;
-      await this.fetchCafeInfo((this.cafes[cafeIndex] as any).id);
     },
   },
 });
