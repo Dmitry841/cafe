@@ -11,6 +11,7 @@
             >Выбрать случайное кафе</app-button
           >
         </div>
+
         <app-dialog
           v-model:isOpenDialog="dialogVisible"
           v-on:handleOpenDialog="handleOpenDialog"
@@ -162,8 +163,25 @@ export default defineComponent({
   margin: 0 auto;
   width: 300px;
 }
+
+/* .wrp {
+  margin: auto;
+} */
 .btn_wrapper {
   position: fixed;
+  margin: auto;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .btn_wrapper {
+    position: fixed;
+    top: 15;
+    left: 0;
+    right: 0;
+    width: 200px;
+    margin: 0 auto;
+  }
 }
 
 .header {
