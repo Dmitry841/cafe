@@ -60,15 +60,24 @@ export default defineComponent({
 });
 </script>
 <style scoped lang="scss">
-.img_wrapper {
-  height: 300px;
-}
+// .img_wrapper {
+//   height: 300px;
+// }
 .img {
   width: 100%;
   height: 300px;
 }
+
+// @media screen and (max-width: 768px) {
+//   .img {
+//     height: 150px;
+//   }
+//   .item_block {
+//     width: 210px;
+//   }
+// }
 .item_block {
-  border: 1px solid teal;
+  border: 1px solid rgb(55, 0, 128);
   border-radius: 5px;
   &:hover {
     cursor: pointer;

@@ -1,6 +1,6 @@
 <template>
   <div class="dialog" v-if="isOpenDialog" v-on:click.stop="handleCloseDialog">
-    <div @click.stop class="dialog__content">
+    <div @click.stop class="dialog__content" id="d">
       <slot></slot>
     </div>
   </div>
@@ -43,5 +43,15 @@ export default defineComponent({
   min-height: 400px;
   min-width: 400px;
   padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog__content {
+    margin: auto;
+    background: rgb(190, 37, 37);
+    border-radius: 12px;
+    min-width: 200px;
+    padding: 20px;
+  }
 }
 </style>

@@ -126,7 +126,6 @@ export default defineComponent({
       }
     },
     async fetchCafeInfo(id: string) {
-      console.log(id);
       try {
         (this as unknown as IProps).isCafesLoading = true;
         const response = await fetch(
@@ -169,6 +168,8 @@ export default defineComponent({
 
 .header {
   text-align: center;
+  background-color: rgb(230, 235, 240);
+  padding: 8px;
 }
 .subheader {
   margin-bottom: 20px;

@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .btn {
-  min-width: 300px;
+  min-width: 90%;
   padding: 10px 15px;
   background: rgb(212, 230, 245);
   font-size: 20px;

@@ -51,4 +51,11 @@ export default defineComponent({
   row-gap: 16px;
   grid-column: 1 / -1;
 }
+
+@media screen and (max-width: 768px) {
+  .list_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="random_block">
+  <div class="info_block">
     <cafe-item
       v-if="!emptyList"
       :cafe="cafe"
@@ -35,7 +35,7 @@ export default defineComponent({
 });
 </script>
 <style scoped>
-.random_block {
+.info_block {
   display: flex;
   flex-direction: column;
 }
