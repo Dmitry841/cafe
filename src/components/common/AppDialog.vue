@@ -48,7 +48,7 @@ export default defineComponent({
 @media screen and (max-width: 768px) {
   .dialog__content {
     margin: auto;
-    background: rgb(190, 37, 37);
+    background: rgb(204, 172, 172);
     border-radius: 12px;
     min-width: 200px;
     padding: 20px;
